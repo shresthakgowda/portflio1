@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shrestha | BIT & ECE Student Portfolio</title>
+  <meta name="description" content="Portfolio of Shrestha, a student exploring Information Technology and Electronics & Communication Engineering.">
+  
+  <!-- Tailwind CSS CDN for utility classes -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              200: '#bae6fd',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- External Presentation Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- External Interactive JavaScript -->
+  <script src="script.js" defer></script>
+</head>
+<body class="min-h-screen bg-slate-50 text-slate-800 antialiased selection:bg-sky-100 selection:text-sky-900 tech-grid-bg font-sans flex flex-col">
+
+  <!-- 1. Navbar -->
+  <header class="sticky top-0 z-50 w-full border-b border-slate-200/90 bg-white/85 backdrop-blur-md transition-all duration-200">
+    <div class="mx-auto flex max-w-5xl items-center justify-between px-4 py-3 sm:px-6">
+      <a href="#" class="group flex items-center gap-2.5 font-mono text-lg font-bold tracking-tight text-slate-900 transition-colors hover:text-sky-600">
+        <span class="flex h-2.5 w-2.5 rounded-full bg-sky-500 shadow-[0_0_8px_rgba(14,165,233,0.6)] transition-transform duration-300 group-hover:scale-125"></span>
+        <span>Shrestha</span>
+        <span class="rounded bg-slate-100 px-2 py-0.5 font-mono text-xs font-normal text-slate-600 border border-slate-200">
+          BIT &bull; ECE
+        </span>
+      </a>
+
+      <!-- Desktop Nav with Scrollspy links -->
+      <nav class="hidden items-center gap-7 sm:flex" aria-label="Main Navigation">
+        <a href="#about" class="desktop-nav-link nav-link text-sm font-medium text-slate-600 hover:text-sky-600 focus:outline-none focus:ring-2 focus:ring-sky-500 rounded px-1">About</a>
+        <a href="#projects" class="desktop-nav-link nav-link text-sm font-medium text-slate-600 hover:text-sky-600 focus:outline-none focus:ring-2 focus:ring-sky-500 rounded px-1">Projects</a>
+        <a href="#contact" class="desktop-nav-link nav-link text-sm font-medium text-slate-600 hover:text-sky-600 focus:outline-none focus:ring-2 focus:ring-sky-500 rounded px-1">Contact</a>
+      </nav>
+
+      <!-- Mobile Hamburger Toggle with Animated Morphing Lines -->
+      <button id="mobileMenuBtn" type="button" class="inline-flex items-center justify-center rounded-lg p-2 text-slate-600 hover:bg-slate-100 hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-500 sm:hidden" aria-label="Toggle navigation menu" aria-expanded="false">
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <line class="hamburger-line line-1" x1="4" y1="7" x2="20" y2="7" stroke-width="2" stroke-linecap="round"/>
+          <line class="hamburger-line line-2" x1="4" y1="12" x2="20" y2="12" stroke-width="2" stroke-linecap="round"/>
+          <line class="hamburger-line line-3" x1="4" y1="17" x2="20" y2="17" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileMenu" class="hidden border-b border-slate-200 bg-white/95 px-4 py-4 backdrop-blur-lg sm:hidden shadow-lg">
+      <nav class="flex flex-col space-y-3" aria-label="Mobile Navigation">
+        <a href="#about" class="mobile-link block rounded-md px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-100 hover:text-sky-600 transition-colors">About</a>
+        <a href="#projects" class="mobile-link block rounded-md px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-100 hover:text-sky-600 transition-colors">Projects</a>
+        <a href="#contact" class="mobile-link block rounded-md px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-100 hover:text-sky-600 transition-colors">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="flex-1">
+    <!-- 2. Hero Section -->
+    <section class="relative overflow-hidden pt-16 pb-20 md:pt-28 md:pb-32 border-b border-slate-200 presentation-aura">
+      <div class="pointer-events-none absolute top-10 left-1/2 -z-10 -translate-x-1/2 w-[550px] h-[550px] rounded-full bg-sky-200/40 blur-3xl" aria-hidden="true"></div>
+      <div class="mx-auto max-w-5xl px-4 sm:px-6">
+        <div class="max-w-3xl space-y-6">
+          <div class="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50/90 px-3.5 py-1 text-xs font-mono text-sky-800 shadow-sm">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-sky-500"></span>
+            </span>
+            <span class="font-semibold">BIT &amp; ECE Undergraduate</span>
+            <span class="text-sky-300">|</span>
+            <span class="text-slate-600">Software &bull; Embedded Systems</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-slate-900 leading-[1.1]">
+            Hi, I&apos;m <span class="bg-gradient-to-r from-sky-600 via-teal-600 to-indigo-600 bg-clip-text text-transparent">Shrestha</span>.
+          </h1>
+
+          <p class="text-lg sm:text-xl text-slate-700 leading-relaxed font-normal">
+            Undergraduate student exploring both <strong class="font-semibold text-slate-900">Information Technology</strong> and <strong class="font-semibold text-slate-900">Electronics &amp; Communication Engineering</strong>.
+          </p>
+
+          <!-- Interactive Typewriter Line -->
+          <div class="inline-flex items-center rounded-lg border border-slate-200 bg-white/80 px-3.5 py-2 text-xs sm:text-sm font-mono text-slate-600 shadow-sm backdrop-blur-sm">
+            <span class="text-sky-600 font-semibold mr-2">// exploring:</span>
+            <span id="typewriterText" class="text-slate-900 font-medium"></span>
+            <span class="typewriter-cursor">|</span>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-4 pt-3">
+            <a href="#projects" class="inline-flex items-center justify-center gap-2 rounded-lg bg-sky-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-sky-500 hover:shadow-md hover:shadow-sky-500/20 active:scale-95 focus:outline-none focus:ring-2 focus:ring-sky-500">
+              <span>View my work</span>
+              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" />
+              </svg>
+            </a>
+            <a href="#contact" class="inline-flex items-center justify-center gap-2 rounded-lg border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm transition-all duration-200 hover:border-slate-400 hover:bg-slate-50 hover:text-slate-900 active:scale-95 focus:outline-none focus:ring-2 focus:ring-slate-400">
+              <span>Contact me</span>
+              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. About Section -->
+    <section id="about" class="py-18 md:py-24 border-b border-slate-200 scroll-mt-14">
+      <div class="mx-auto max-w-5xl px-4 sm:px-6">
+        <div class="mb-10 flex items-center gap-3">
+          <span class="font-mono text-sky-600 text-sm font-semibold">01.</span>
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">About Me</h2>
+          <div class="h-px flex-1 bg-slate-200"></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+          <div class="lg:col-span-7 space-y-4 text-slate-600 leading-relaxed text-base">
+            <p>
+              I am an undergraduate student pursuing <strong class="text-slate-900 font-semibold">Information Technology (BIT)</strong> and <strong class="text-slate-900 font-semibold">Electronics &amp; Communication Engineering (ECE)</strong> at <span class="rounded bg-sky-50 px-2 py-0.5 font-mono text-xs text-sky-700 border border-sky-200 font-medium">[Your College / University Name]</span>.
+            </p>
+            <p>
+              My academic journey sits right at the convergence of software algorithms and physical hardware. I am fascinated by understanding not just how web platforms and systems operate digitally, but also how microcontrollers, sensors, and communication protocols transmit data in real-world environments.
+            </p>
+            <p>
+              Currently, I am building strong foundational competencies in both disciplines—curious about embedded systems, practical computing, and exploring <span class="text-sky-700 font-medium underline decoration-sky-300 underline-offset-4">[Your Current Focus, e.g. IoT, Web Development, or Signal Systems]</span>.
+            </p>
+            <div class="pt-2 text-xs text-slate-500 font-mono">
+              * Note: You can easily customize the bracketed highlights to reflect your specific college and current projects.
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 rounded-xl border border-slate-200 bg-white p-6 shadow-sm spotlight-card">
+            <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-100">
+              <h3 class="font-mono text-sm font-semibold uppercase tracking-wider text-slate-800">Skills &amp; Technologies</h3>
+              <span class="text-xs text-sky-600 font-mono bg-sky-50 px-2 py-0.5 rounded border border-sky-200 font-medium">Core Stack</span>
+            </div>
+            <p class="text-xs text-slate-500 mb-4">Tools, programming languages, and hardware topics I work with:</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="inline-flex items-center gap-1.5 rounded-md border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-mono text-slate-700 hover:border-sky-300 hover:bg-sky-50 hover:text-sky-700 transition-all">
+                <span class="h-1.5 w-1.5 rounded-full bg-sky-500"></span>
+                Python / C / C++
+              </span>
+              <span class="inline-flex items-center gap-1.5 rounded-md border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-mono text-slate-700 hover:border-sky-300 hover:bg-sky-50 hover:text-sky-700 transition-all">
+                <span class="h-1.5 w-1.5 rounded-full bg-sky-500"></span>
+                JavaScript / TypeScript
+              </span>
+              <span class="inline-flex items-center gap-1.5 rounded-md border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-mono text-slate-700 hover:border-sky-300 hover:bg-sky-50 hover:text-sky-700 transition-all">
+                <span class="h-1.5 w-1.5 rounded-full bg-sky-500"></span>
+                React / Next.js / HTML &amp; CSS
+              </span>
+              <span class="inline-flex items-center gap-1.5 rounded-md border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-mono text-slate-700 hover:border-sky-300 hover:bg-sky-50 hover:text-sky-700 transition-all">
+                <span class="h-1.5 w-1.5 rounded-full bg-sky-500"></span>
+                SQL / REST APIs
+              </span>
+              <span class="inline-flex items-center gap-1.5 rounded-md border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-mono text-slate-700 hover:border-sky-300 hover:bg-sky-50 hover:text-sky-700 transition-all">
+                <span class="h-1.5 w-1.5 rounded-full bg-sky-500"></span>
+                Arduino / ESP32 / Microcontrollers
+              </span>
+              <span class="inline-flex items-center gap-1.5 rounded-md border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-mono text-slate-700 hover:border-sky-300 hover:bg-sky-50 hover:text-sky-700 transition-all">
+                <span class="h-1.5 w-1.5 rounded-full bg-sky-500"></span>
+                Circuit Analysis / PCB Basics
+              </span>
+              <span class="inline-flex items-center gap-1.5 rounded-md border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-mono text-slate-700 hover:border-sky-300 hover:bg-sky-50 hover:text-sky-700 transition-all">
+                <span class="h-1.5 w-1.5 rounded-full bg-sky-500"></span>
+                Git &amp; GitHub
+              </span>
+              <span class="inline-flex items-center gap-1.5 rounded-md border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-mono text-slate-700 hover:border-sky-300 hover:bg-sky-50 hover:text-sky-700 transition-all">
+                <span class="h-1.5 w-1.5 rounded-full bg-sky-500"></span>
+                Linux / CLI / Signals
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Projects Section with Category Filtering -->
+    <section id="projects" class="py-18 md:py-24 border-b border-slate-200 scroll-mt-14">
+      <div class="mx-auto max-w-5xl px-4 sm:px-6">
+        <div class="mb-6 flex items-center gap-3">
+          <span class="font-mono text-sky-600 text-sm font-semibold">02.</span>
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">Projects</h2>
+          <div class="h-px flex-1 bg-slate-200"></div>
+        </div>
+
+        <p class="mb-6 max-w-2xl text-sm sm:text-base text-slate-600 leading-relaxed">
+          A curated selection of academic coursework, embedded hardware experiments, and software applications. Filter by discipline:
+        </p>
+
+        <!-- Category Filter Tabs -->
+        <div class="mb-8 flex flex-wrap items-center justify-between gap-4">
+          <div class="flex flex-wrap gap-2">
+            <button type="button" class="filter-btn active rounded-lg px-3.5 py-1.5 font-mono text-xs" data-filter="all">
+              All Projects
+            </button>
+            <button type="button" class="filter-btn rounded-lg px-3.5 py-1.5 font-mono text-xs" data-filter="ece">
+              ECE &bull; Embedded
+            </button>
+            <button type="button" class="filter-btn rounded-lg px-3.5 py-1.5 font-mono text-xs" data-filter="bit">
+              BIT &bull; Web Software
+            </button>
+            <button type="button" class="filter-btn rounded-lg px-3.5 py-1.5 font-mono text-xs" data-filter="comm">
+              ECE &bull; Communication
+            </button>
+          </div>
+          <div id="projectCount" class="font-mono text-xs text-slate-500 font-medium">
+            Showing 3 of 3 projects
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="projectsContainer">
+          <!-- Card 1 (ECE & Embedded) -->
+          <article class="project-card spotlight-card group relative flex flex-col justify-between rounded-xl border border-slate-200 bg-white p-6 shadow-sm" data-category="ece">
+            <div class="relative z-10">
+              <div class="flex items-center justify-between mb-4">
+                <span class="inline-flex items-center rounded-md border border-sky-200 bg-sky-50 px-2.5 py-1 text-xs font-mono font-medium text-sky-800">ECE &bull; Embedded</span>
+                <span class="rounded bg-slate-100 px-2 py-0.5 font-mono text-[11px] text-slate-600 border border-slate-200">Hardware</span>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 transition-colors duration-200 group-hover:text-sky-600">
+                IoT Microcontroller Sensor System
+              </h3>
+              <p class="mt-3 text-sm text-slate-600 leading-relaxed">
+                An ESP32/Arduino prototype reading real-time sensor telemetry and publishing data over MQTT to a local OLED display and cloud analytics dashboard.
+              </p>
+              <div class="mt-5 flex flex-wrap gap-1.5">
+                <span class="rounded bg-slate-100 px-2 py-1 font-mono text-xs text-slate-700 border border-slate-200">C++ / Arduino</span>
+                <span class="rounded bg-slate-100 px-2 py-1 font-mono text-xs text-slate-700 border border-slate-200">ESP32 &amp; Sensors</span>
+                <span class="rounded bg-slate-100 px-2 py-1 font-mono text-xs text-slate-700 border border-slate-200">MQTT / I2C</span>
+              </div>
+            </div>
+            <div class="relative z-10 mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-medium text-slate-700 hover:text-sky-600 transition-colors">
+                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                <span>View on GitHub</span>
+              </a>
+              <span class="text-xs font-mono text-slate-400">git &rarr;</span>
+            </div>
+          </article>
+
+          <!-- Card 2 (BIT & Web Software) -->
+          <article class="project-card spotlight-card group relative flex flex-col justify-between rounded-xl border border-slate-200 bg-white p-6 shadow-sm" data-category="bit">
+            <div class="relative z-10">
+              <div class="flex items-center justify-between mb-4">
+                <span class="inline-flex items-center rounded-md border border-indigo-200 bg-indigo-50 px-2.5 py-1 text-xs font-mono font-medium text-indigo-800">BIT &bull; Web Software</span>
+                <span class="rounded bg-slate-100 px-2 py-0.5 font-mono text-[11px] text-slate-600 border border-slate-200">Software</span>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 transition-colors duration-200 group-hover:text-sky-600">
+                Interactive Student Portal Application
+              </h3>
+              <p class="mt-3 text-sm text-slate-600 leading-relaxed">
+                A modern full-stack web application designed for academic coursework management, student progress tracking, and clean data visualization.
+              </p>
+              <div class="mt-5 flex flex-wrap gap-1.5">
+                <span class="rounded bg-slate-100 px-2 py-1 font-mono text-xs text-slate-700 border border-slate-200">React / Next.js</span>
+                <span class="rounded bg-slate-100 px-2 py-1 font-mono text-xs text-slate-700 border border-slate-200">TypeScript</span>
+                <span class="rounded bg-slate-100 px-2 py-1 font-mono text-xs text-slate-700 border border-slate-200">Tailwind CSS</span>
+              </div>
+            </div>
+            <div class="relative z-10 mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-medium text-slate-700 hover:text-sky-600 transition-colors">
+                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                <span>View on GitHub</span>
+              </a>
+              <span class="text-xs font-mono text-slate-400">git &rarr;</span>
+            </div>
+          </article>
+
+          <!-- Card 3 (ECE & Communication) -->
+          <article class="project-card spotlight-card group relative flex flex-col justify-between rounded-xl border border-slate-200 bg-white p-6 shadow-sm" data-category="comm">
+            <div class="relative z-10">
+              <div class="flex items-center justify-between mb-4">
+                <span class="inline-flex items-center rounded-md border border-teal-200 bg-teal-50 px-2.5 py-1 text-xs font-mono font-medium text-teal-800">ECE &bull; Communication</span>
+                <span class="rounded bg-slate-100 px-2 py-0.5 font-mono text-[11px] text-slate-600 border border-slate-200">Analysis</span>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 transition-colors duration-200 group-hover:text-sky-600">
+                Digital Signal &amp; Channel Simulator
+              </h3>
+              <p class="mt-3 text-sm text-slate-600 leading-relaxed">
+                A Python simulation modeling communication channel noise, modulation schemes, and digital filtering with frequency response visualization.
+              </p>
+              <div class="mt-5 flex flex-wrap gap-1.5">
+                <span class="rounded bg-slate-100 px-2 py-1 font-mono text-xs text-slate-700 border border-slate-200">Python / NumPy</span>
+                <span class="rounded bg-slate-100 px-2 py-1 font-mono text-xs text-slate-700 border border-slate-200">SciPy &amp; FFT</span>
+                <span class="rounded bg-slate-100 px-2 py-1 font-mono text-xs text-slate-700 border border-slate-200">Matplotlib</span>
+              </div>
+            </div>
+            <div class="relative z-10 mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-medium text-slate-700 hover:text-sky-600 transition-colors">
+                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                <span>View on GitHub</span>
+              </a>
+              <span class="text-xs font-mono text-slate-400">git &rarr;</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Contact Section -->
+    <section id="contact" class="py-18 md:py-24 border-b border-slate-200 scroll-mt-14">
+      <div class="mx-auto max-w-5xl px-4 sm:px-6">
+        <div class="mb-6 flex items-center gap-3">
+          <span class="font-mono text-sky-600 text-sm font-semibold">03.</span>
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">Get In Touch</h2>
+          <div class="h-px flex-1 bg-slate-200"></div>
+        </div>
+
+        <p class="mb-10 max-w-2xl text-sm sm:text-base text-slate-600 leading-relaxed">
+          Whether you want to discuss a project, collaborate on research, or explore internships and engineering roles, I would love to connect!
+        </p>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+          <!-- Contact Info -->
+          <div class="lg:col-span-5 space-y-6">
+            <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm space-y-6 spotlight-card">
+              <h3 class="text-lg font-semibold text-slate-900">Contact Details</h3>
+              
+              <!-- Direct Email with Copy Button -->
+              <div class="space-y-1.5">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-mono uppercase tracking-wider text-slate-500">Direct Email</span>
+                  <button id="copyEmailBtn" type="button" class="copy-btn inline-flex items-center gap-1.5 rounded px-2.5 py-1 text-xs font-mono font-medium">
+                    <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                    <span>Copy</span>
+                  </button>
+                </div>
+                <p class="font-mono text-sm text-sky-700 font-medium">
+                  <a id="emailText" href="mailto:your.email@example.com" data-email="your.email@example.com" class="hover:underline">your.email@example.com</a>
+                </p>
+                <p class="text-[11px] text-slate-400 font-mono">Click copy or email directly</p>
+              </div>
+
+              <!-- Online Profiles -->
+              <div class="space-y-3 pt-3 border-t border-slate-100">
+                <span class="text-xs font-mono uppercase tracking-wider text-slate-500">Online Profiles</span>
+                <div class="flex flex-col gap-2.5">
+                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-3 rounded-lg border border-slate-200 bg-slate-50 px-3.5 py-2.5 text-sm text-slate-700 hover:border-sky-300 hover:bg-sky-50/70 hover:text-sky-700 transition-all shadow-sm">
+                    <svg class="h-5 w-5 text-slate-500 group-hover:text-sky-600 transition-colors" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                    <span class="font-mono text-xs">github.com/your-username</span>
+                  </a>
+                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-3 rounded-lg border border-slate-200 bg-slate-50 px-3.5 py-2.5 text-sm text-slate-700 hover:border-sky-300 hover:bg-sky-50/70 hover:text-sky-700 transition-all shadow-sm">
+                    <svg class="h-5 w-5 text-slate-500 group-hover:text-sky-600 transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    <span class="font-mono text-xs">linkedin.com/in/your-profile</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form with Live Client Validation & Async Simulation -->
+          <div class="lg:col-span-7">
+            <div class="rounded-xl border border-slate-200 bg-white p-6 md:p-8 shadow-sm spotlight-card">
+              <h3 class="text-lg font-semibold text-slate-900 mb-2">Send a Message</h3>
+              <p class="text-xs text-slate-500 mb-6">Have an opportunity, question, or project inquiry? Drop a note below:</p>
+
+              <!-- Success Notification Panel -->
+              <div id="contactSuccess" class="hidden rounded-lg border border-emerald-300 bg-emerald-50/80 p-5 text-emerald-900">
+                <div class="flex items-center gap-2 font-medium">
+                  <svg class="h-5 w-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                  </svg>
+                  <span class="font-semibold">Message validated and received!</span>
+                </div>
+                <p class="mt-2 text-xs text-emerald-800 leading-relaxed">
+                  Thank you for reaching out. The frontend successfully processed your message. You can connect this to Formspree, EmailJS, or an API backend when ready.
+                </p>
+                <div class="mt-4">
+                  <button id="resetFormBtn" type="button" class="rounded bg-white border border-emerald-300 px-3 py-1.5 text-xs font-mono text-emerald-800 hover:bg-emerald-100 transition-colors shadow-sm">
+                    &larr; Send another message
+                  </button>
+                </div>
+              </div>
+
+              <!-- Interactive Form -->
+              <form id="contactForm" class="space-y-4" novalidate>
+                <div>
+                  <label for="formName" class="block text-xs font-mono uppercase tracking-wider text-slate-700 mb-1.5 font-medium">Name</label>
+                  <input type="text" id="formName" placeholder="Your Name" class="form-input w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 transition-colors shadow-sm">
+                </div>
+                <div>
+                  <label for="formEmail" class="block text-xs font-mono uppercase tracking-wider text-slate-700 mb-1.5 font-medium">Email Address</label>
+                  <input type="email" id="formEmail" placeholder="you@example.com" class="form-input w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 transition-colors shadow-sm">
+                </div>
+                <div>
+                  <div class="flex items-center justify-between mb-1.5">
+                    <label for="formMessage" class="block text-xs font-mono uppercase tracking-wider text-slate-700 font-medium">Message</label>
+                    <span class="text-[11px] font-mono text-slate-400"><span id="charCount">0</span>/500</span>
+                  </div>
+                  <textarea id="formMessage" rows="4" maxlength="500" placeholder="Write your note or project inquiry here..." class="form-input w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 transition-colors shadow-sm"></textarea>
+                </div>
+                <button id="submitBtn" type="submit" class="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-lg bg-sky-600 px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-sky-500 hover:shadow-md hover:shadow-sky-500/20 active:scale-95 focus:outline-none focus:ring-2 focus:ring-sky-500 disabled:opacity-60 disabled:cursor-not-allowed">
+                  <div class="spinner hidden"></div>
+                  <span class="btn-text">Send Message</span>
+                  <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+                  </svg>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 6. Footer -->
+  <footer class="w-full border-t border-slate-200 bg-white py-8 text-center text-xs text-slate-500 font-mono">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>&copy; 2026 Shrestha. All rights reserved.</div>
+      <div class="flex items-center gap-4">
+        <span class="text-slate-300">|</span>
+        <span class="text-slate-600 font-medium">BIT &bull; ECE Portfolio</span>
+        <span class="text-slate-300">|</span>
+        <a href="#" class="text-slate-600 hover:text-sky-600 transition-colors">Back to top &uarr;</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 7. Scroll-to-Top Button with Circular Progress Ring -->
+  <button id="backToTopBtn" type="button" aria-label="Scroll to top of page">
+    <svg class="progress-ring" width="46" height="46" viewBox="0 0 46 46">
+      <circle class="progress-ring__bg" stroke="#e2e8f0" stroke-width="3" fill="transparent" r="18" cx="23" cy="23" />
+      <circle class="progress-ring__circle" stroke="#0284c7" stroke-width="3" fill="transparent" r="18" cx="23" cy="23" />
+    </svg>
+    <svg class="absolute h-4 w-4 text-slate-600" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+    </svg>
+  </button>
+
+  <!-- 8. Toast Notifications Container -->
+  <div id="toastContainer" aria-live="polite"></div>
+
+</body>
+</html>
